@@ -15,7 +15,7 @@ const SummaryTableBody: React.FC<SummaryTableBodyProps> = ({
       {calendarEvents.map((events, idx) => {
         return (
           <SummaryTableRow
-            key={`event_summary_${idx}`}
+            key={`summary-row-${idx}`}
             events={events}
             date={dates[idx]}
           />

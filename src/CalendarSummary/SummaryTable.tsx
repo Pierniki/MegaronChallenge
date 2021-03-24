@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import getCalendarEvents, { CalendarEvent } from '../api-client';
 import { getDatesArray } from '../utility/date';
 import SummaryTableBody from './SummaryTableBody';
@@ -7,7 +7,7 @@ import SummaryTableHead from './SummaryTableHead';
 
 const SummaryTable: React.FC = () => {
   const [calendarEvents, setCalendarEvents] = useState<CalendarEvent[][]>([]);
-  const dates = useMemo(() => getDatesArray(7), []);
+  const { current: dates } = useRef(getDatesArray(7));
 
   const getCallendarEventsByDates = async (dates: Date[]) => {
     const promisesArray = dates.map((date) => getCalendarEvents(date));

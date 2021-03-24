@@ -1,0 +1,32 @@
+$dark-grey: #262626;
+$light-grey: #d4d4d4;
+$extra-light-grey: #ededed;
+
+.calendar-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $dark-grey;
+
+  table,
+  td,
+  th {
+    border: 1px solid $light-grey;
+  }
+
+  table {
+    border-collapse: collapse;
+    td,
+    th {
+      padding: 8px 10px;
+    }
+
+    tbody tr:nth-child(2n) {
+      background-color: $extra-light-grey;
+    }
+
+    tfoot tr {
+      background-color: $extra-light-grey;
+    }
+  }
+}

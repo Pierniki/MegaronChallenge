@@ -1,3 +1,4 @@
+import React from 'react';
 import { CalendarEvent } from '../api-client';
 import {
   getTotalEventsDuration,
