@@ -1,4 +1,5 @@
 import React from 'react';
+import SummaryTable from './SummaryTable';
 
 const CalendarSummary: React.FunctionComponent = () => {
   return (
@@ -6,21 +7,6 @@ const CalendarSummary: React.FunctionComponent = () => {
       <h2>Calendar summary</h2>
       <SummaryTable />
     </div>
-  );
-};
-
-const SummaryTable: React.FC = () => {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Number of Events</th>
-          <th>Total duration [min]</th>
-          <th>Longest event</th>
-        </tr>
-      </thead>
-    </table>
   );
 };
 
