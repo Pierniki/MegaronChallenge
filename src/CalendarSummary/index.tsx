@@ -1,12 +1,26 @@
 import React from 'react';
-import { getCalendarEvents } from '../api-client';
 
 const CalendarSummary: React.FunctionComponent = () => {
   return (
     <div>
       <h2>Calendar summary</h2>
-      {/* Not implemented */}
+      <SummaryTable />
     </div>
+  );
+};
+
+const SummaryTable: React.FC = () => {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Number of Events</th>
+          <th>Total duration [min]</th>
+          <th>Longest event</th>
+        </tr>
+      </thead>
+    </table>
   );
 };
 
