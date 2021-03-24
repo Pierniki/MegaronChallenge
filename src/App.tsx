@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 import CalendarSummary from './CalendarSummary';
 
 function App() {

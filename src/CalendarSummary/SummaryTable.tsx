@@ -1,23 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
-import getCalendarEvents, { CalendarEvent } from '../api-client';
+import React from 'react';
+import getCalendarEvents from '../api-client';
+import usePromises from '../hooks/usePromises';
 import { getDatesArray } from '../utility/date';
 import SummaryTableBody from './SummaryTableBody';
 import SummaryTableFoot from './SummaryTableFooter';
 import SummaryTableHead from './SummaryTableHead';
 
+const dates = getDatesArray();
+const eventsPromises = dates.map((date) => getCalendarEvents(date));
+
 const SummaryTable: React.FC = () => {
-  const [calendarEvents, setCalendarEvents] = useState<CalendarEvent[][]>([]);
-  const { current: dates } = useRef(getDatesArray(7));
+  const { data: calendarEvents, isLoading, error } = usePromises(
+    eventsPromises
+  );
 
-  const getCallendarEventsByDates = async (dates: Date[]) => {
-    const promisesArray = dates.map((date) => getCalendarEvents(date));
-    const allCalendarEvents = await Promise.all(promisesArray);
-    setCalendarEvents(allCalendarEvents);
-  };
-
-  useEffect(() => {
-    getCallendarEventsByDates(dates);
-  }, [dates]);
+  if (isLoading) return <h3>Loading...</h3>;
+  if (error) return <h3>Oops! Something went wrong while fetching data.</h3>;
 
   return (
     <table>

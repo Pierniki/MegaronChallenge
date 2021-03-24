@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.scss';
 import SummaryTable from './SummaryTable';
 
 const CalendarSummary: React.FunctionComponent = () => {
