@@ -6,10 +6,10 @@ import SummaryTableBody from './SummaryTableBody';
 import SummaryTableFoot from './SummaryTableFooter';
 import SummaryTableHead from './SummaryTableHead';
 
-const dates = getDatesArray();
-const eventsPromises = dates.map((date) => getCalendarEvents(date));
-
 const SummaryTable: React.FC = () => {
+  const dates = getDatesArray();
+  const eventsPromises = dates.map((date) => getCalendarEvents(date));
+
   const { data: calendarEvents, isLoading, error } = usePromises(
     eventsPromises
   );
