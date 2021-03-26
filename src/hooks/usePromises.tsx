@@ -7,18 +7,24 @@ const usePromises = <T,>(promises: Promise<T>[]) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
     const fetchData = () => {
       Promise.all(promisesArray)
         .then((data) => {
+          if (!isMounted) return;
           setIsLoading(false);
           setData(data);
         })
         .catch((error) => {
+          if (!isMounted) return;
           setIsLoading(false);
           setError(error);
         });
     };
     fetchData();
+    return () => {
+      isMounted = false;
+    };
   }, [promisesArray]);
 
   return { data, isLoading, error };

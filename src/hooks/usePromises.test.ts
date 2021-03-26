@@ -20,6 +20,7 @@ describe('usePromises', () => {
 
     await waitForNextUpdate();
     const expectedResolvedPromisesData = [true, true];
+    expect(result.current.error).toBeNull();
     expect(result.current.data).toEqual(expectedResolvedPromisesData);
   });
 
@@ -27,9 +28,9 @@ describe('usePromises', () => {
     const { result, waitForNextUpdate } = renderHook(() =>
       usePromises([getResolvingPromise()])
     );
-    expect(result.current.isLoading).toEqual(true);
+    expect(result.current.isLoading).toBeTruthy();
     await waitForNextUpdate();
-    expect(result.current.isLoading).toEqual(false);
+    expect(result.current.isLoading).toBeFalsy();
   });
 
   it('correctly sets error when one of the promises rejects', async () => {
