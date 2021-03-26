@@ -1,4 +1,8 @@
-# Megaron take-home code challenge
+## Info
+Its my solution for Megaron take-home code challenge, you can see details below.
+## Live version
+### https://Pierniki.github.io/MegaronChallenge
+## Challenge 
 
 Hi,
 
