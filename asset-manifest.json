@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MegaronChallenge/static/css/main.0677a331.chunk.css",
-    "main.js": "/MegaronChallenge/static/js/main.d2b41c75.chunk.js",
-    "main.js.map": "/MegaronChallenge/static/js/main.d2b41c75.chunk.js.map",
+    "main.js": "/MegaronChallenge/static/js/main.4696b8f8.chunk.js",
+    "main.js.map": "/MegaronChallenge/static/js/main.4696b8f8.chunk.js.map",
     "runtime-main.js": "/MegaronChallenge/static/js/runtime-main.9558d1f4.js",
     "runtime-main.js.map": "/MegaronChallenge/static/js/runtime-main.9558d1f4.js.map",
     "static/js/2.f4396f71.chunk.js": "/MegaronChallenge/static/js/2.f4396f71.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.9558d1f4.js",
     "static/js/2.f4396f71.chunk.js",
     "static/css/main.0677a331.chunk.css",
-    "static/js/main.d2b41c75.chunk.js"
+    "static/js/main.4696b8f8.chunk.js"
   ]
 }
